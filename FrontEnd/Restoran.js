@@ -178,7 +178,7 @@ export class Restoran
            }
            else{
          //   this.stolovi[this.x*red+parseInt(kolona)].oslobodiSto(this.x*red+parseInt(kolona));
-             fetch("https://localhost:5001/Restoran/OslobodiSto/"+red+"/"+kolona,{
+             fetch("https://localhost:5001/Restoran/OslobodiSto/"+red+"/"+kolona+"/"+this.id,{
                         method: "DELETE"
                     }).then(resp=>{
                         if(resp.ok){
@@ -210,7 +210,7 @@ export class Restoran
 
                // this.stolovi[this.x*red+parseInt(kolona)].izmeniSto(this.x*red+parseInt(kolona),brLjudi);
 
-               fetch("https://localhost:5001/Restoran/IzmeniSto/"+red+"/"+kolona+"/"+brLjudi,{
+               fetch("https://localhost:5001/Restoran/IzmeniSto/"+red+"/"+kolona+"/"+brLjudi+"/"+this.id,{
                         method: "PUT"
                     }).then(resp=>{
                         if(resp.ok){

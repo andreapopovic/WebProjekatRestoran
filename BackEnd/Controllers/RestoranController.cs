@@ -69,13 +69,13 @@ namespace BackEnd.Controllers
            await Context.SaveChangesAsync();
 
         }
-        [Route("OslobodiSto/{n}/{m}")]
+        [Route("OslobodiSto/{n}/{m}/{id}")]
         [HttpDelete]
 
-        public async Task OslobodiSto(int n,int m)
+        public async Task OslobodiSto(int n,int m,int id)
         {
 
-            var sto=await Context.Stolovi.Where( s=> s.N==n && s.M==m).FirstOrDefaultAsync();
+            var sto=await Context.Stolovi.Where( s=> s.N==n && s.M==m && s.Restoran.ID==id).FirstOrDefaultAsync();
             Context.Stolovi.Remove(sto);
             await Context.SaveChangesAsync();
 
@@ -83,12 +83,12 @@ namespace BackEnd.Controllers
         }
 
         
-        [Route("IzmeniSto/{n}/{m}/{brLjudi}") ]
+        [Route("IzmeniSto/{n}/{m}/{brLjudi}/{id}") ]
         [HttpPut]
 
-        public async Task IzmeniSto(int n,int m,int brLjudi)
+        public async Task IzmeniSto(int n,int m,int brLjudi,int id)
         {
-            var sto=await Context.Stolovi.Where( s=> s.N==n && s.M==m).FirstOrDefaultAsync();
+            var sto=await Context.Stolovi.Where( s=> s.N==n && s.M==m && s.Restoran.ID==id).FirstOrDefaultAsync();
                        
             sto.Kapacitet=brLjudi;
             await Context.SaveChangesAsync();
