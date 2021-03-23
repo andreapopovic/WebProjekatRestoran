@@ -184,7 +184,7 @@ export class Restoran
                         if(resp.ok){
                             location.reload();
                         }
-                     }).catch(err=>{
+                     }).catch (err=>{
                           console.log(err);
                      });
            }

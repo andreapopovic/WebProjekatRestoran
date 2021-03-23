@@ -83,7 +83,7 @@ namespace BackEnd.Controllers
         }
 
         
-        [Route("IzmeniSto/{n}/{m}/{brLjudi}")]
+        [Route("IzmeniSto/{n}/{m}/{brLjudi}") ]
         [HttpPut]
 
         public async Task IzmeniSto(int n,int m,int brLjudi)
